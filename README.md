@@ -5,16 +5,16 @@ pixel size.  All the contents of the element will scale with it!
 
 ### Usage
 
-*w* The width to scale to.  Required.
+`w` The width to scale to.  Required.
 
-*h* The height to scale to.  Required.
+`h` The height to scale to.  Required.
 
-*distort* Whether to allow differing x and y scale
+`distort` Whether to allow differing x and y scale
 factors.  Is true by default, meaning the element could be
 distorted.  If false, the smallest of the two scales will be
 used for both axes, so that neither w or h is ever exceeded.
 
-*scaleDirection* If negative, only scaling down will be
+`scaleDirection` If negative, only scaling down will be
 allowed.  If greater than 0, only scaling up will be allowed.
 Otherwise, either direction is allowed.  Defaults to 0.
 
