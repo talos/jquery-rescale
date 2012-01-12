@@ -31,22 +31,6 @@
    interpreted as representing official policies, either expressed or
    implied, of John Krauss.
 **/
-
-/**
-   DOCUMENTATION
-
-   See README.md
-**/
-
-/**
-   VERSIONS
-
-   0.1.0 : Initial release
-**/
-
-/**
-   CODE
-**/
 (function($) {
     var properties = [
         [ 'transform', 'transform-origin' ],
