@@ -5,8 +5,8 @@
     <!-- jQuery -->
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 
-    <script type="text/javascript" src="src/jquery-scale.js"></script>
-    <title>jquery-scale Demo</title>
+    <script type="text/javascript" src="src/jquery-rescale.js"></script>
+    <title>jquery-rescale Demo</title>
 
     <style type="text/css">
       body {
@@ -19,7 +19,7 @@
       padding: .5em;
       }
 
-      .scale {
+      .rescale {
       border: 1px solid #333;
       -moz-box-shadow: 6px 6px 6px #666;
       -webkit-box-shadow: 6px 6px 6px #666;
@@ -49,7 +49,7 @@
           <option value="1">Expand Only</option>
         </select>
       </div>
-      <div class="scale" >
+      <div class="rescale" >
         <div>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -61,13 +61,13 @@
         </div>
         <img src="http://upload.wikimedia.org/wikipedia/commons/2/21/Mandel_zoom_00_mandelbrot_set.jpg" height="200" />
       </div>
-      <iframe class="scale" src="http://en.wikipedia.org/" height="600" width="1000"></iframe>
+      <iframe class="rescale" src="http://en.wikipedia.org/" height="600" width="1000"></iframe>
     </div>
 
 
     <script type="text/javascript">
 var rescale = function() {
-  $('.scale').scale(
+  $('.rescale').rescale(
     $('#width').val(),
     $('#height').val(),
     $('#distort').is(':checked'),
