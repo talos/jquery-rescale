@@ -3,6 +3,8 @@
 This jQuery plugin arbitrarly CSS transforms elements to a specific
 pixel size.  All the contents of the element will scale with it!
 
+[See it in action.](http://talos.github.com/jquery-rescale/demo.html)
+
 ### Usage
 
 `w` The width to scale to.  Required.
@@ -70,4 +72,5 @@ http://www.github.com/talos/jquery-rescale
 CDN it from:
 
 http://talos.github.com/jquery-rescale/jquery-rescale.js
+
 http://talos.github.com/jquery-rescale/jquery-rescale.min.js
