@@ -1,0 +1,33 @@
+{
+    "name": "jquery-rescale",
+    "version": "0.1.0",
+    "title": "jQuery-rescale",
+    "author": {
+        "name": "John Krauss",
+        "url": "https://github.com/talos"
+    },
+    "licenses": [
+        {
+            "type": "BSD",
+            "url": "LICENSE.txt"
+        }
+    ],
+    "dependencies": {
+        "jquery": "1"
+    },
+    "description": "This plugin uses CSS transforms to rescale elements to fixed pixel sizes.",
+    "keywords": [
+        "scaling",
+        "css"
+    ],
+    "homepage": "https://github.com/talos/jquery-rescale",
+    "maintainers": [
+        {
+            "name": "John Krauss",
+            "url": "https://github.com/talos"
+        }
+    ],
+    "files": [
+        "jquery-rescale.js"
+    ]
+}
