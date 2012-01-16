@@ -1,6 +1,6 @@
 {
     "name": "jquery-rescale",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "title": "jQuery-rescale",
     "author": {
         "name": "John Krauss",
@@ -13,7 +13,7 @@
         }
     ],
     "dependencies": {
-        "jquery": "1"
+        "jquery": "~> 1.6"
     },
     "description": "This plugin uses CSS transforms to rescale elements to fixed pixel sizes.",
     "keywords": [

@@ -30,6 +30,30 @@ pixel size.  All the contents of the element will scale with it!
     $(selector).rescale(w, h, options);
 ```
 
+There is no way to extract the displayed dimensions of CSS transformed
+elements.  This can be [incredibly][] [irritating][]. To get around this,
+jquery-rescale leaves a little trace of its transformation in the
+'rescale' data property.
+
+  [incredibly]: http://stackoverflow.com/questions/8445680/get-actual-width-and-height-of-an-element-after-being-scaled-using-css3
+  [irritating]: http://stackoverflow.com/questions/8025622/how-to-get-screen-position-of-css3-3d-transformed-elements?answertab=votes#tab-top
+
+```javascript
+    $(selector).data('rescale')
+```
+
+Will return this object:
+
+```javascript
+    {
+      width: [transformed width],
+      height: [transformed height]
+    }
+```
+
+The returned values are simply a trace of how jquery-rescale last set them.
+Transformations through other means will not be reflected.
+
 ### Examples
 
 ```javascript
@@ -37,7 +61,12 @@ pixel size.  All the contents of the element will scale with it!
 ```
 
 Would scale all elements with the class *rescale* to 100 by 100 pixels
-about their center.
+about their center.  These would now both return `100`:
+
+```javascript
+    $('.rescale').data('rescale').width;
+    $('.rescale').data('rescale').height;
+```
 
 If you want to keep the top-left corner of the elements in the same place,
 pass `x` and `y` arguments to specify the center of scaling:
@@ -77,6 +106,16 @@ smaller than that will be scaled up.
 
 Play around with [demo.html](http://talos.github.com/jquery-rescale/demo.html)
 to see it in action.
+
+### Caveats
+
+This is a very simple implementation of transforms, meant for cases
+where you want to transform a bunch of elements to a uniform pixel
+size.  It does not handle animations, and it overwrites/is overwritten
+by other transforms.  If you want full-featured transformation
+support in a jQuery plugin, try [TransformJS][].
+
+  [TransformJS]: http://transformjs.strobeapp.com/
 
 ### Links
 

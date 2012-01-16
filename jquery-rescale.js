@@ -103,8 +103,10 @@
 
         return $.each(this, function (i, el) {
             var $el = $(el),
-                xScale = w / $el.width(),
-                yScale = h / $el.height();
+                elWidth = $el.width(),
+                elHeight = $el.height(),
+                xScale = w / elWidth,
+                yScale = h / elHeight;
 
             if (settings.direction > 0) { // allow scaling only up
                 xScale = xScale < 1 ? 1 : xScale;
@@ -122,8 +124,11 @@
                 }
             }
 
-            $el.css(buildCSS('scale(' + xScale + ',' + yScale + ')',
-                             settings.x + '% ' + settings.y + '%'));
+            $el.data('rescale', { // undocumented: give us away to see rescaled height & width
+                width:  elWidth * xScale,
+                height: elHeight * yScale
+            }).css(buildCSS('scale(' + xScale + ',' + yScale + ')',
+                            settings.x + '% ' + settings.y + '%'));
         });
     };
 }(jQuery));
