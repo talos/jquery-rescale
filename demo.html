@@ -10,22 +10,25 @@
 
     <style type="text/css">
       body {
-      font-family: Helvetica, sans-serif;
+          font-family: Helvetica, sans-serif;
+      }
+
+      input {
+          width: 5em;
       }
 
       #controls {
-      border: 1px solid #aaa;
-      margin: .5em;
-      padding: .5em;
+          border: 1px solid #aaa;
+          margin: .5em;
+          padding: .5em;
       }
 
       .rescale {
-      border: 1px solid #333;
-      -moz-box-shadow: 6px 6px 6px #666;
-      -webkit-box-shadow: 6px 6px 6px #666;
-      box-shadow: 6px 6px 6px #666;
+          border: 1px solid #333;
+          -moz-box-shadow: 6px 6px 6px #666;
+          -webkit-box-shadow: 6px 6px 6px #666;
+          box-shadow: 6px 6px 6px #666;
       }
-}
 
     </style>
   </head>
@@ -38,6 +41,12 @@
 
         <label for="height">Height:</label>
         <input id="height" name="height" type="text" value="200" />
+
+        <label for="x">Center X %:</label>
+        <input id="x" name="x" type="text" value="50" />
+
+        <label for="y">Center Y %:</label>
+        <input id="y" name="y" type="text" value="50" />
 
         <label for="distort">Distort:</label>
         <input id="distort" name="distort" type="checkbox" checked />
@@ -66,18 +75,22 @@
 
 
     <script type="text/javascript">
-var rescale = function() {
-  $('.rescale').rescale(
-    $('#width').val(),
-    $('#height').val(),
-    $('#distort').is(':checked'),
-    $('#direction').val()
-   );
-};
+      var rescale = function() {
+          $('.rescale').rescale(
+              $('#width').val(),
+              $('#height').val(),
+              {
+                  x: $('#x').val(),
+                  y: $('#y').val(),
+                  distort: $('#distort').is(':checked'),
+                  direction: $('#direction').val()
+              }
+          );
+      };
 
-$('input,select').live('change', rescale);
+      $('input,select').bind('change', rescale);
 
-$(document).ready(rescale);
+      $(document).ready(rescale);
     </script>
   </body>
 </html>
